@@ -1,0 +1,17 @@
+---
+- hosts: ubuntu
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: copying the index file
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html
+  - name: display message on two different servers
+    lineinfile:
+      dest: "/var/www/html/index.html"
+      regexp: "_xvar_"
+      line: "{{xvar}}"
+      state: present
+      create: True
+

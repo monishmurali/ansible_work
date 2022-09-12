@@ -1,0 +1,40 @@
+184.169.182.145   ip address of n1
+ 
+52.52.132.205 ip address of n2
+
+54.176.209.59  ip address of ansi control server
+
+ansible:
+
+ssh -i "ansible.pem" ubuntu@ec2-54-177-59-94.us-west-1.compute.amazonaws.com
+ec2-54-177-59-94.us-west-1.compute.amazonaws.com   //public ipv4 DNS
+sudo apt-get update
+sudo apt-get install python -y
+sudo apt-get install ansible -y
+
+
+
+server1
+ssh -i "ansible.pem" ubuntu@ec2-184-169-182-145.us-west-1.compute.amazonaws.com
+ec2-184-169-182-145.us-west-1.compute.amazonaws.com
+sudo apt-get update
+sudo apt-get install python-y
+
+
+server 2 
+ssh -i "ansible.pem" ubuntu@ec2-52-52-132-205.us-west-1.compute.amazonaws.com
+ec2-52-52-132-205.us-west-1.compute.amazonaws.com
+sudo apt-get update  
+sudo apt-get install
+
+
+ssh-keygen
+
+vi ~/.ssh/ansible.pem
+
+chmod 600 ~/.ssh/ansible.pem
+
+cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/ansible.pem ec2-184-169-182-145.us-west-1.compute.amazonaws.com "cat >> ~/.ssh/authorized_keys"
+
+cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/ansible.pem ec2-52-52-132-205.us-west-1.compute.amazonaws.com "cat >> ~/.ssh/authorized_keys"
+

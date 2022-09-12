@@ -1,0 +1,9 @@
+---
+  hosts: ubuntu
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Install Apache
+    apt:
+      name: apache2
+      update_cache: yes
