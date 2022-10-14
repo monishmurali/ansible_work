@@ -1,5 +1,5 @@
 [ubuntu]
 
-184.169.182.145  xvar=1 
+ip address1  xvar=1 
 
-52.52.132.205   xvar=2
+ip address2  xvar=2
